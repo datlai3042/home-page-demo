@@ -1,6 +1,5 @@
-import React from "react";
-import { SubMenuItemAnchor } from "../NavigationItem";
 import { Link } from "react-router-dom";
+import { SubMenuItemAnchor } from "../NavigationItem";
 
 const NavigationAnchor = (props: Omit<SubMenuItemAnchor, "type">) => {
   const { content, href } = props;
