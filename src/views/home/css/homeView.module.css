@@ -1,0 +1,285 @@
+:root {
+  --paddingContainer: 1.4rem;
+  --borderContainer: 0.1rem solid #ccc;
+  --borderRadiusContainer: 0.3rem;
+  --colorHover: #f47721;
+  --colorConnect: #c45500;
+  --widthLineCenter: 0.25rem;
+  --widthConnectRight: 5rem;
+  --widthCard: 20rem;
+  --widthConnectLeft: 24rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem;
+  padding: var(--paddingContainer);
+  border: var(--borderContainer);
+  border-radius: var(--borderRadiusContainer);
+  background-color: #fff;
+}
+
+.chart > .chart__wrapper {
+  min-width: 109.4rem;
+  height: max-content;
+}
+
+.chart > .chart__wrapper > .chart__topLayout {
+  min-height: 80%;
+  padding: var(--paddingContainer);
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chart > .chart__wrapper > .chart__bottomLayout {
+  margin-top: 2rem;
+  height: 12rem;
+  padding: var(--paddingContainer);
+  display: flex;
+  gap: 1.6rem;
+}
+
+/*char-left*/
+.chart__topLayout > .chart__left {
+  position: relative;
+  width: calc(var(--widthCard) + var(--widthConnectRight));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  order: 1;
+  height: max-content;
+}
+
+.chart__left > .line-connect {
+  position: absolute;
+  right: -0.4rem;
+  top: 8%;
+  height: 85%;
+  width: var(--widthLineCenter);
+  background-color: var(--colorConnect);
+}
+
+.card {
+  position: relative;
+  width: var(--widthCard);
+  min-height: 7rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-size: 1.3rem;
+  border: var(--borderContainer);
+  border-radius: 0.4rem;
+  padding: 1rem var(--paddingContainer) 1.3rem;
+}
+
+.card.card--left {
+  margin-left: var(--widthConnectLeft);
+  width: 70%;
+  font-size: 1.3rem;
+}
+
+.card > .card__connect {
+  position: absolute;
+  top: 50%;
+  height: 0.2rem;
+  display: flex;
+}
+
+.card > .card__connect.card__connect--left {
+  left: 0;
+  width: var(--widthConnectLeft);
+
+  transform: translate3d(-100%, -50%, 0);
+}
+
+.card > .card__connect.card__connect--right {
+  right: 0;
+  width: var(--widthConnectRight);
+  transform: translate3d(100%, -50%, 0);
+}
+
+.card__connect > .card__line {
+  flex: 1;
+  background-color: var(--colorConnect);
+  position: relative;
+}
+
+.card__line > .card__arrow {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  color: var(--colorConnect);
+  transform: translate3d(0, -50%, 0);
+}
+
+.card__line > .card__arrow.card__arrow--right {
+  right: -1.3rem;
+}
+
+.card__line > .card__arrow.card__arrow--left {
+  left: -1.3rem;
+}
+
+.card > .card__title {
+  font-size: 1.4rem;
+}
+
+.card > .card__link {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card__link > .card__href {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  gap: 0.3rem;
+  font-weight: 500;
+}
+
+.card__text {
+  color: #000;
+  font-weight: 700;
+}
+
+.card__link > .card__href:hover > span {
+  color: var(--colorHover);
+  text-decoration: underline;
+}
+
+/*char-right*/
+.chart__topLayout > .chart__right {
+  min-height: 100%;
+  width: 60rem;
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chart__right > .center {
+  position: absolute;
+  top: 0%;
+  left: 7%;
+}
+
+/*
+  guide - left layout
+*/
+
+.guide > .guide__title {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.guide__title > .guide__city {
+  font-size: 2rem;
+}
+
+.guide__content > a {
+  color: var(--primary-color);
+}
+
+.guide__content:hover,
+.guide__content:hover > a {
+  color: var(--colorHover);
+  text-decoration: underline;
+}
+
+.guide__content {
+  font-weight: 500;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container > .wrapper {
+    min-height: calc(100vh - 9rem);
+
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  .container > .wrapper > .chart {
+    border: var(--borderContainer);
+    border-radius: var(--borderRadiusContainer);
+    width: 74.6%;
+    height: max-content;
+    max-width: 74.6%;
+    overflow-x: auto;
+    display: flex;
+  }
+
+  .container > .wrapper > .guide {
+    width: 23.7%;
+    padding: 0.6rem 1.6rem;
+    font-size: 1.37rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    border: var(--borderContainer);
+    border-radius: var(--borderRadiusContainer);
+    overflow-x: auto;
+  }
+
+  .guide__common {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+ 
+}
+
+@media screen and (max-width: 767px) {
+  .container > .wrapper {
+    min-height: calc(100vh - 9rem);
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    justify-content: space-between;
+  }
+
+  .container > .wrapper > .chart {
+    border: var(--borderContainer);
+    border-radius: var(--borderRadiusContainer);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: flex;
+  }
+
+  .container > .wrapper > .guide {
+    width: 100%;
+    padding: 0.6rem 1.6rem;
+    font-size: 1.37rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    border: var(--borderContainer);
+    border-radius: var(--borderRadiusContainer);
+    overflow-x: auto;
+  }
+
+  .guide__common {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+ 
+}

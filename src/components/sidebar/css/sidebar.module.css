@@ -1,0 +1,165 @@
+.sidebar__wrapper {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 28rem;
+  height: 100vh;
+  background-color: #555;
+  color: #fff;
+  overflow-y: scroll;
+}
+
+.sidebar__wrapper::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.sidebar__wrapper::-webkit-scrollbar-thumb {
+  width: 1rem;
+  background-color: hsl(0deg 0% 100% / 25%);
+  border-radius: 0.8rem;
+}
+
+.sidebar__wrapper::-webkit-scrollbar-track {
+  width: 1rem;
+  background-color: hsl(0deg 0% 100% / 10%);
+  border-radius: 0.8rem;
+}
+
+.sidebar__home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  gap: .4rem;
+  width: 100%;
+}
+
+.sidebar__wrapper--show {
+  animation: showSidebar 0.6s forwards;
+}
+
+.sidebar__wrapper--hidden {
+  animation: hiddenSidebar 2s forwards;
+}
+
+.sidebar__list {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+margin-bottom: 2rem;
+}
+
+.sidebar__item {
+  border-bottom: 0.05rem solid hsl(0deg 0% 100% / 8%);
+
+  padding: 1rem;
+  height: max-content;
+}
+
+.sidebar__item a {
+  color: #fff;
+}
+
+.sidebar__item--hasSubMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0rem;
+  cursor: pointer;
+}
+
+.sidebar__item--hasSubMenu > .primary-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.sidebar__item--hasSubMenu > .isActive {
+  background-color: hsl(0deg 0% 100% / 8%);
+}
+
+.sidebar__item--hasSubMenu > .subMenu {
+  min-width: 100%;
+  width: max-content;
+  min-height: 5rem;
+  height: max-content;
+  display: none;
+  font-size: 1.2rem;
+}
+
+.sidebar__item--hasSubMenu > .subMenu--show {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__item--hasSubMenu > .subMenu > .subMenu__item {
+  min-height: 3.6rem;
+  padding-left: 3.8rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.05rem solid hsl(0deg 0% 100% / 8%);
+
+}
+
+.sidebar__item > .icon {
+  margin-right: 2rem;
+}
+
+.sidebar__item > .child {
+  display: block;
+}
+
+.sidebar__action {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.sidebar__action > .item {
+  width: 100%;
+  height: 3.8rem;
+  border: 0.2rem solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+gap:.6rem;
+font-weight: 700;
+}
+
+@keyframes showSidebar {
+  0% {
+    left: -250%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes hiddenSidebar {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -250%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar__container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar__container {
+    display: none;
+  }
+}
