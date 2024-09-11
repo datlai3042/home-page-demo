@@ -6,7 +6,7 @@ const SIZE_ICON = 16;
 
 
 const HeaderUpdateYear = () => {
-  const [yearCurrent, setYearCurrent] = useState<number>(() => {
+  const [yearCurrent] = useState<number>(() => {
     const year = new Date().getFullYear();
     return year;
   });
