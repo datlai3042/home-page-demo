@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Model from "../../../model";
 import { SubMenuItemModel } from "../NavigationItem";
 
-type NavigationModelProps = Omit<SubMenuItemModel, "type">;
+type NavigationModelProps = Omit<SubMenuItemModel, "type"> & {
+  setShowMenu: React.Dispatch<SetStateAction<boolean>>;
+};
 
 const NavigationModel = (props: NavigationModelProps) => {
-  const { content, model } = props;
+  const { content, model, setShowMenu } = props;
 
   const [showModel, setShowModel] = useState<boolean>(false);
 
   return (
     <>
       <p
-      style={{padding: '.8rem 2rem'}}
+        style={{ padding: ".8rem 2rem" }}
         onClick={(e) => {
           e.stopPropagation();
           setShowModel(true);
@@ -20,7 +22,7 @@ const NavigationModel = (props: NavigationModelProps) => {
       >
         {content}
       </p>
-      {showModel && <Model setShowModel={setShowModel}>{model}</Model>}
+      {showModel && <Model setShowModel={setShowModel} setShowMenu={setShowMenu}>{model}</Model>}
     </>
   );
 };

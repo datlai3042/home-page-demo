@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FaTags } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import NavigationAnchor from "../NavigationAnchor";
 import NavigationModel from "../NavigationModel";
-import { FaTags } from "react-icons/fa";
 
 
 export type SubMenuItemAnchor = {
@@ -75,6 +75,7 @@ const NavigationItem = (props: TProps) => {
                   <NavigationAnchor
                     content={subMenuItem.content}
                     href={subMenuItem.href}
+                    setShowMenu={setShowMenu}
                   />
                 )}
 
@@ -82,6 +83,8 @@ const NavigationItem = (props: TProps) => {
                   <NavigationModel
                     content={subMenuItem.content}
                     model={subMenuItem.model}
+                    setShowMenu={setShowMenu}
+
                   />
                 )}
               </div>
