@@ -4,8 +4,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 
 const SIZE_ICON = 16;
 
+
 const HeaderUpdateYear = () => {
-  const [yearCurrent] = useState<number>(() => {
+  const [yearCurrent, setYearCurrent] = useState<number>(() => {
     const year = new Date().getFullYear();
     return year;
   });
@@ -68,6 +69,7 @@ const HeaderUpdateYear = () => {
                 key={i}
                 className="subMenu__content"
                 onClick={(e) => {
+                  setShowMenu(false)
                   e.stopPropagation();
                 }}
               >

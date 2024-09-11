@@ -50,7 +50,7 @@ const Header = () => {
             labelSubMenu="Công ty"
             subMenu={subMenu1}
           />
-          <HeaderUpdateYear />
+          <HeaderUpdateYear  />
           <HeaderAction user={{ fullName: "Lại Huỳnh Phát Đạt" }} />
 
           <div
